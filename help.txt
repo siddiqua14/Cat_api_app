@@ -1,0 +1,48 @@
+. Install bee Tool Again
+Since bee is not recognized, make sure that it's installed correctly by running the following command:
+
+bash
+Copy code
+go install github.com/beego/bee/v2@latest
+After this, check whether the bee binary was successfully installed in your $GOPATH/bin directory.
+
+2. Verify the Installation Path
+Ensure that the Go binaries are in the correct directory. The Go install path for binaries should be $GOPATH/bin. For example:
+
+bash
+Copy code
+echo $GOPATH
+Make sure it prints something like /home/w3e100/go. If it doesn't, recheck the setup for the $GOPATH.
+
+Now, check if the bee tool is located in your $GOPATH/bin directory:
+
+bash
+Copy code
+ls $GOPATH/bin
+Look for a file named bee (without any file extension).
+
+3. Make Sure the Go Binary Path Is in Your PATH
+You need to ensure that the $GOPATH/bin directory is added to your system’s PATH. Double-check if the export PATH=$PATH:$GOPATH/bin command was correctly added to your .bashrc. You can confirm by running:
+
+bash
+Copy code
+echo $PATH
+Make sure that $GOPATH/bin is part of the output.
+
+If it’s not there, you can manually add the path to your .bashrc:
+
+bash
+Copy code
+echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.bashrc
+source ~/.bashrc
+4. Verify the Installation Again
+Now, try to verify the bee tool:
+
+bash
+Copy code
+bee version
+
+
+go mod tidy
+go mod verify
+bee run
